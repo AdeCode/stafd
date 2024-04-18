@@ -11,27 +11,33 @@ function Partners() {
             </h2>
             <div className='flex flex-col lg:ml-14 gap-4 pr-4 lg:pr-0'>
                 <div className='flex gap-5 lg:w-[700px] w-full'>
-                    <Image
-                        src="/assets/partners/bolt.jpg"
-                        width="150"
-                        height="100"
-                        alt="bolt"
-                        className='lg:flex rounded-lg'
-                    />
-                    <Image
-                        src="/assets/partners/fair.png"
-                        width="150"
-                        height="100"
-                        alt="fairmoney"
-                        className='lg:flex rounded-lg'
-                    />
-                    <Image
-                        src="/assets/partners/message.jpg"
-                        width="150"
-                        height="100"
-                        alt="message"
-                        className='lg:flex rounded-lg'
-                    />
+                    <div className='lg:w-[150px] w-1/3'>
+                        <Image
+                            src="/assets/partners/bolt.jpg"
+                            width="150"
+                            height="100"
+                            alt="bolt"
+                            className='lg:flex rounded-lg'
+                        />
+                    </div>
+                    <div className='lg:w-[150px] w-1/3'>
+                        <Image
+                            src="/assets/partners/fair.png"
+                            width="150"
+                            height="100"
+                            alt="fairmoney"
+                            className='lg:flex rounded-lg h-full'
+                        />
+                    </div>
+                    <div className='lg:w-[150px] w-1/3'>
+                        <Image
+                            src="/assets/partners/message.jpg"
+                            width="150"
+                            height="100"
+                            alt="message"
+                            className='lg:flex rounded-lg h-full'
+                        />
+                    </div>
                 </div>
                 <div className='flex gap-5 lg:w-[700px] w-full'>
                     <Image
