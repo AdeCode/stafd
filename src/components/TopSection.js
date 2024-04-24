@@ -20,7 +20,7 @@ function TopSection() {
     },[])
 
   return (
-    <section className="min-h-screen lg:pt-48 pt-10 bg-smoky_black text-flash_white">
+    <section className="min-h-screen lg:pt-48 pt-20 bg-smoky_black text-flash_white">
         <div className='logo flex items-center gap-3 mb-8'>
             <div className='lg:h-5 h-2 lg:w-32 w-12 bg-dun'></div>
             <Image
