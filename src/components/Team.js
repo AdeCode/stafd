@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Team() {
   return (
-    <section className='bg-smoky_black min-h-screen lg:pl-16 pl-4 py-5 lg:py-0 flex items-center'>
+    <section className='bg-smoky_black min-h-screen lg:pl-16 pl-4 py-5 lg:py-0 flex items-center' id="team">
         <div className='flex lg:flex-row flex-col lg:items-center items-start lg:gap-[200px] gap-5'>
             <h2 className='font-bold lg:text-4xl text-xl text-dun'>Meet
                 <p className='font-normal text-flash_white'>Our team</p>
