@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
+import { useParams  } from 'next/navigation';
+import Link from 'next/link'
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+    const params = useParams()
+    const [active, setActive] = useState('')
+
+    useEffect(()=>{
+        setActive(window.location.hash)
+    },[params])
     return (
         <nav className="bg-white fixed w-screen z-50">
             <div className="mx-auto lg:px-6 px-4 py-4">
@@ -25,17 +32,19 @@ function Navbar() {
                     </div>
                     <div className="flex space-x-4">
                         <div className="hidden md:flex items-center space-x-1">
-                            <a href="#mission" className="px-3 py-1 hover:bg-gray-300 rounded-full text-gray-700 hover:text-gray-900 hover:font-bold">
+                            <Link href="#mission" scroll={false} 
+                            className={`${active.includes('#mission') ? 'font-bold' : ''} px-3 py-1 hover:bg-gray-300 rounded-full text-gray-700 hover:text-gray-900 hover:font-bold`}>
                                 <h3 className="">Mission</h3>
-                            </a>
-                            <a href="#partners" className="px-3 py-1 hover:bg-gray-300 rounded-full text-gray-700 hover:text-gray-900 hover:font-bold"
-                            >Partners</a>
-                            <a href="#team" className="px-3 py-1 hover:bg-gray-300 rounded-full text-gray-700 hover:text-gray-900 hover:font-bold"
-                            >Team</a>
-                            {/* <FontAwesomeIcon icon={faEnvelope} /> */}
+                            </Link>
+                            <Link href="#partners" scroll={false} 
+                            className={`${active.includes('#partners') ? 'font-bold' : ''} px-3 py-1 hover:bg-gray-300 rounded-full text-gray-700 hover:text-gray-900 hover:font-bold`}
+                            >Partners</Link>
+                            <Link href="#team" scroll={false} 
+                            className={`${active.includes('#team') ? 'font-bold' : ''} px-3 py-1 hover:bg-gray-300 rounded-full text-gray-700 hover:text-gray-900 hover:font-bold`}
+                            >Team</Link>
                         </div>
                     </div>
-                    {/* mobile button goes here */}
+                    {/* mobile button */}
                     <div className="md:hidden flex items-center">
                         <button onClick={()=>setIsOpen(!isOpen)} className="md:hidden">
                             {
@@ -63,11 +72,10 @@ function Navbar() {
             </div>
             {/* mobile menu */}
             <div className={`${isOpen ? 'block' : 'hidden'} md:hidden min-h-screen`}>
-                <a href="/" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Home</a>
-                <a href="#partners" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Partners</a>
-                <a href="#mission" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Mission</a>
-                <a href="#team" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Team</a>
-                {/* <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Contact Us</a> */}
+                <Link href="/" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Home</Link>
+                <Link href="#partners" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Partners</Link>
+                <Link href="#mission" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Mission</Link>
+                <Link href="#team" className="block py-2 px-4 text-sm hover:bg-gray-200" onClick={()=>setIsOpen(false)}>Team</Link>
             </div>
         </nav >
     )

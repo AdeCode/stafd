@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Mission() {
     return (
-        <section className='min-h-screen flex lg:flex-row flex-col'>
+        <section className='min-h-screen flex lg:flex-row flex-col mt-10'>
             <div className='w-[50%] bg-gray flex items-center flex-col pt-10'>
                 <h2 className='text-smoky_black border-b-8 border-dun w-fit font-bold 
             text-xl lg:text-4xl mb-20 pb-3'>Mission</h2>
